@@ -1,0 +1,150 @@
+fatih@fatih:~$ su -
+Passwort: 
+su: Legitimierungsfehler
+fatih@fatih:~$ date
+So 31. Jul 20:02:41 CEST 2022
+fatih@fatih:~$ date 0421124419
+date: das Datum kann nicht gesetzt werden: Vorgang nicht zulässig
+So 21. Apr 12:44:00 CEST 2019
+fatih@fatih:~$ sudo date 0421124419
+[sudo] Passwort für fatih: 
+So 21. Apr 12:44:00 CEST 2019
+fatih@fatih:~$ date
+So 31. Jul 20:03:32 CEST 2022
+fatih@fatih:~$ cat /etc/sudoers
+cat: /etc/sudoers: Keine Berechtigung
+fatih@fatih:~$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+Defaults	use_pty
+
+# This preserves proxy settings from user environments of root
+# equivalent users (group sudo)
+#Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
+
+# This allows running arbitrary commands, but so does ALL, and it means
+# different sudoers have their choice of editor respected.
+#Defaults:%sudo env_keep += "EDITOR"
+
+# Completely harmless preservation of a user preference.
+#Defaults:%sudo env_keep += "GREP_COLOR"
+
+# While you shouldn't normally run git as root, you need to with etckeeper
+#Defaults:%sudo env_keep += "GIT_AUTHOR_* GIT_COMMITTER_*"
+
+# Per-user preferences; root won't have sensible values for them.
+#Defaults:%sudo env_keep += "EMAIL DEBEMAIL DEBFULLNAME"
+
+# "sudo scp" or "sudo rsync" should be able to use your SSH agent.
+#Defaults:%sudo env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"
+
+# Ditto for GPG agent
+#Defaults:%sudo env_keep += "GPG_AGENT_INFO"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "@include" directives:
+
+@includedir /etc/sudoers.d
+fatih@fatih:~$ groups
+fatih adm cdrom sudo dip plugdev lpadmin lxd sambashare
+fatih@fatih:~$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,fatih
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:fatih
+floppy:x:25:
+tape:x:26:
+sudo:x:27:fatih
+audio:x:29:pulse
+dip:x:30:fatih
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:fatih
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+crontab:x:104:
+messagebus:x:105:
+systemd-timesync:x:106:
+input:x:107:
+sgx:x:108:
+kvm:x:109:
+render:x:110:
+syslog:x:111:
+tss:x:112:
+bluetooth:x:113:
+ssl-cert:x:114:
+uuidd:x:115:
+systemd-oom:x:116:
+tcpdump:x:117:
+_ssh:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:fatih
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+nm-openvpn:x:126:
+scanner:x:127:saned
+saned:x:128:
+colord:x:129:
+geoclue:x:130:
+pulse:x:131:
+pulse-access:x:132:
+gdm:x:133:
+lxd:x:134:fatih
+fatih:x:1000:
+sambashare:x:135:fatih
+vboxsf:x:999:
+
