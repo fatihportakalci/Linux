@@ -1,0 +1,8 @@
+fatih@fatih:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/fatih/bin
+fatih@fatih:~$ greeting
+Herzlich willkomme! Heute ist:
+Do 4. Aug 17:20:39 CEST 2022
+fatih@fatih:~$
+
+
