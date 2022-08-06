@@ -1,0 +1,14 @@
+fatih@fatih:~$ cd
+fatih@fatih:~$ Documents
+Documents: Befehl nicht gefunden.
+fatih@fatih:~$ cd Dokumente
+fatih@fatih:~/Dokumente$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+fatih@fatih:~/Dokumente$ tail -n 3 spam.txt
+sadasdasdas
+fatih@fatih:~/Dokumente$ which tail
+/usr/bin/tail
+fatih@fatih:~/Dokumente$
+
+
+
