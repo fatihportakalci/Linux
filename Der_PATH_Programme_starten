@@ -1,0 +1,40 @@
+fatih@fatih:~$ cd
+fatih@fatih:~$ Documents
+Documents: Befehl nicht gefunden.
+fatih@fatih:~$ cd Dokumente
+fatih@fatih:~/Dokumente$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+fatih@fatih:~/Dokumente$ tail -n 3 spam.txt
+sadasdasdas
+fatih@fatih:~/Dokumente$ which tail
+/usr/bin/tail
+fatih@fatih:~/Dokumente$
+fatih@fatih:~/Dokumente$ cd
+fatih@fatih:~$ cd bin/
+fatih@fatih:~/bin$ touch greeting
+fatih@fatih:~/bin$ echo "Hallo Welt"
+Hallo Welt
+fatih@fatih:~/bin$ cat greeting
+#!/bin/bash
+
+echo "Herzlich willkomme! Heute ist:"
+date
+fatih@fatih:~/bin$ ./greeting
+bash: ./greeting: Keine Berechtigung
+fatih@fatih:~/bin$ ./greeting
+Herzlich willkomme! Heute ist:
+Do 4. Aug 17:09:02 CEST 2022
+fatih@fatih:~/bin$ cd ~
+fatih@fatih:~$ ~/bin/greeting
+Herzlich willkomme! Heute ist:
+Do 4. Aug 17:10:11 CEST 2022
+fatih@fatih:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+fatih@fatih:~$ export PATH=$PATH:~/bin
+fatih@fatih:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/fatih/bin
+fatih@fatih:~$ greeting
+Herzlich willkomme! Heute ist:
+Do 4. Aug 17:12:46 CEST 2022
+fatih@fatih:~$
+
